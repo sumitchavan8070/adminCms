@@ -1,0 +1,135 @@
+/* General styles for the Question Paper Management component
+.question-paper-management {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.question-paper-management h2 {
+  margin-bottom: 20px;
+}
+
+.question-paper-management .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.question-paper-management table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.question-paper-management table th,
+.question-paper-management table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.question-paper-management table th {
+  background-color: #f4f4f4;
+}
+
+.question-paper-management table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.question-paper-management .btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.question-paper-management .btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.question-paper-management .btn-primary:hover {
+  background-color: #0056b3;
+} */
+
+
+/* General styles for the Question Paper Management component */
+.question-paper-management {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.question-paper-management h2 {
+  margin-bottom: 20px;
+}
+
+.question-paper-management .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.question-paper-management table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.question-paper-management table th,
+.question-paper-management table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.question-paper-management table th {
+  background-color: #f4f4f4;
+}
+
+.question-paper-management table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.question-paper-management .btn {
+  padding: 8px 16px;
+  margin: 0 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.question-paper-management .btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.question-paper-management .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.question-paper-management .btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.question-paper-management .btn-danger:hover {
+  background-color: #c82333;
+}
+
+.no-question-papers {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-question-papers p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.no-question-papers .btn {
+  font-size: 16px;
+}
+

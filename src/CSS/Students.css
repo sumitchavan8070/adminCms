@@ -1,0 +1,142 @@
+/* src/CSS/Students.css
+.students-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .students-table table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .students-table thead {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .students-table th, .students-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .students-table th {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .students-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .students-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .students-table tbody td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .students-table tbody td:last-child {
+    text-align: center;
+  }
+  
+  .students-table tbody tr td {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .students-table th, .students-table td {
+      padding: 8px 10px;
+    }
+  
+    .students-table th {
+      font-size: 14px;
+    }
+  
+    .students-table tbody td {
+      font-size: 12px;
+    }
+  }
+   */
+
+
+   /* src/CSS/Students.css */
+
+.students-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .students-table table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .students-table thead {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .students-table th, .students-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .students-table th {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .students-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .students-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .students-table tbody td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .students-table tbody td:last-child {
+    text-align: center;
+  }
+  
+  .students-table tbody tr td {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .students-table th, .students-table td {
+      padding: 8px 10px;
+    }
+  
+    .students-table th {
+      font-size: 14px;
+    }
+  
+    .students-table tbody td {
+      font-size: 12px;
+    }
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  

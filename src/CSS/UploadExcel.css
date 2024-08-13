@@ -1,0 +1,120 @@
+/* 
+
+   .upload-excel-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; 
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .paper-info {
+    margin-bottom: 20px;
+  }
+  
+  .file-input {
+    margin-bottom: 20px;
+  }
+  
+  .file-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .file-details p {
+    margin-right: 10px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .upload-status {
+    margin-top: 20px;
+    color: #d9534f; 
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #a0a0a0;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+   */
+
+
+
+   .modal.show {
+    display: block;
+  }
+/*   
+  .modal-dialog {
+    max-width: 600px;
+  } */
+  
+  .modal-body .mb-3 p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .file-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .upload-status {
+    color: green;
+  }
+  
+  .spinner-border {
+    vertical-align: text-bottom;
+  }
+  
+  .alert {
+    margin-bottom: 0;
+  }
+  

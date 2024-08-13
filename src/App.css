@@ -1,0 +1,109 @@
+/* Ensure full height for the app */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .app {
+    display: flex;
+    height: 100%;
+  }
+  
+  .sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    background-color: #343a40; /* Bootstrap dark background color */
+  }
+  
+  .page-content {
+    margin-left: 280px; /* Same as the sidebar width */
+    padding: 20px;
+    width: calc(100% - 280px);
+    background-color: #f8f9fa; /* Bootstrap light background color */
+    overflow: auto;
+  }
+  
+  /* Styling for links in sidebar */
+  .nav-link {
+    color: #ffffff !important;
+  }
+  
+  .nav-link.active {
+    background-color: #007bff !important; /* Bootstrap primary color */
+  }
+  
+  .catButton{
+    margin: 10px;
+  }
+
+  .headerNav{
+    display: flex;
+    margin: 15px 5px;
+  }
+
+  .addCatButton{
+    margin-inline: 20px;
+
+  }
+
+
+
+  /* src/styles.css */
+.categories-component {
+  padding: 20px;
+}
+
+.categories-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.categories-table th, .categories-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.categories-table th {
+  background-color: #f4f4f4;
+}
+
+.add-subcategory-container, .add-year-container {
+  margin-top: 20px;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

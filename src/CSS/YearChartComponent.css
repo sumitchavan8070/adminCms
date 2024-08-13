@@ -1,0 +1,20 @@
+/* YearChartComponent.css */
+.year-chart-component {
+  margin-bottom: 20px;
+}
+
+.year-chart-component .card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.year-chart-component .card h3 {
+  margin-top: 0;
+}
+
+.year-chart-component .card p {
+  margin: 8px 0;
+}

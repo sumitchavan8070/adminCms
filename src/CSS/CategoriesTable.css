@@ -1,0 +1,87 @@
+.categories-component {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .categories-component table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .categories-component th, .categories-component td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .categories-component th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .categories-component tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .categories-component tr:hover {
+    background-color: #ddd;
+  }
+  
+  .categories-component button {
+    margin-right: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .categories-component button:hover {
+    background-color: #ddd;
+  }
+  
+  .categories-component button:first-child {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .categories-component button:nth-child(2) {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .categories-component button:nth-child(3) {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .categories-component button:nth-child(4) {
+    background-color: #FF9800;
+    color: white;
+  }
+  
+
+  .categories-component {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .categories-component button {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .categories-component button:hover {
+    background-color: #45a
+  }  
