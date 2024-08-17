@@ -1,3 +1,120 @@
+// import React, { useState, useEffect } from "react";
+// import { useDispatch } from "react-redux";
+// import { updateCategory, addCategory } from "../Slice/categoriesSlice";
+// import "../CSS/CategoryModal.css";
+
+// const CategoryModal = ({ show, onClose, category }) => {
+//   const [catName, setCatName] = useState("");
+//   const [catShortName, setCatShortName] = useState("");
+//   const [description, setDescription] = useState("");
+//   const [image, setImage] = useState("");
+
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     if (category) {
+//       setCatName(category.catName);
+//       setCatShortName(category.catShortName);
+//       setDescription(category.description);
+//       setImage(category.image);
+//     } else {
+//       setCatName("");
+//       setCatShortName("");
+//       setDescription("");
+//       setImage("");
+//     }
+//   }, [category]);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     const categoryData = {
+//       catName,
+//       catShortName,
+//       description,
+//       image,
+//     };
+
+//     if (category) {
+//       dispatch(updateCategory({ ...category, ...categoryData }));
+//     } else {
+//       dispatch(addCategory(categoryData));
+//     }
+//     onClose();
+//   };
+
+//   if (!show) return null;
+
+//   return (
+//     <div className="modal" style={{ display: "block" }}>
+//       <div className="modal-dialog">
+//         <div className="modal-content">
+//           <div className="modal-header">
+//             <h5 className="modal-title">
+//               {category ? "Edit Category" : "Add Category"}
+//             </h5>
+//             <button type="button" className="close" onClick={onClose}>
+//               <span>&times;</span>
+//             </button>
+//           </div>
+//           <form onSubmit={handleSubmit}>
+//             <div className="modal-body">
+//               <div className="form-group">
+//                 <label>Category Name</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   value={catName}
+//                   onChange={(e) => setCatName(e.target.value)}
+//                 />
+//               </div>
+//               <div className="form-group">
+//                 <label>Category Short Name</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   value={catShortName}
+//                   onChange={(e) => setCatShortName(e.target.value)}
+//                 />
+//               </div>
+//               <div className="form-group">
+//                 <label>Description</label>
+//                 <textarea
+//                   className="form-control"
+//                   value={description}
+//                   onChange={(e) => setDescription(e.target.value)}
+//                 ></textarea>
+//               </div>
+//               <div className="form-group">
+//                 <label>Image URL</label>
+//                 <input
+//                   type="text"
+//                   className="form-control"
+//                   value={image}
+//                   onChange={(e) => setImage(e.target.value)}
+//                 />
+//               </div>
+//             </div>
+//             <div className="modal-footer">
+//               <button
+//                 type="button"
+//                 className="btn btn-secondary"
+//                 onClick={onClose}
+//               >
+//                 Close
+//               </button>
+//               <button type="submit" className="btn btn-primary">
+//                 {category ? "Save changes" : "Add Category"}
+//               </button>
+//             </div>
+//           </form>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CategoryModal;
+
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateCategory, addCategory } from "../Slice/categoriesSlice";
@@ -8,6 +125,7 @@ const CategoryModal = ({ show, onClose, category }) => {
   const [catShortName, setCatShortName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [pdfFiles, setPdfFiles] = useState([{ heading: "", url: "" }]);
 
   const dispatch = useDispatch();
 
@@ -17,13 +135,30 @@ const CategoryModal = ({ show, onClose, category }) => {
       setCatShortName(category.catShortName);
       setDescription(category.description);
       setImage(category.image);
+      setPdfFiles(category.pdfFiles || [{ heading: "", url: "" }]);
     } else {
       setCatName("");
       setCatShortName("");
       setDescription("");
       setImage("");
+      setPdfFiles([{ heading: "", url: "" }]);
     }
   }, [category]);
+
+  const handlePdfChange = (index, field, value) => {
+    const updatedPdfFiles = [...pdfFiles];
+    updatedPdfFiles[index][field] = value;
+    setPdfFiles(updatedPdfFiles);
+  };
+
+  const handleAddPdfFile = () => {
+    setPdfFiles([...pdfFiles, { heading: "", url: "" }]);
+  };
+
+  const handleRemovePdfFile = (index) => {
+    const updatedPdfFiles = pdfFiles.filter((_, i) => i !== index);
+    setPdfFiles(updatedPdfFiles);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +167,7 @@ const CategoryModal = ({ show, onClose, category }) => {
       catShortName,
       description,
       image,
+      pdfFiles,
     };
 
     if (category) {
@@ -92,6 +228,45 @@ const CategoryModal = ({ show, onClose, category }) => {
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                 />
+              </div>
+              <div className="form-group">
+                <label>PDF Files</label>
+                {pdfFiles.map((pdfFile, index) => (
+                  <div key={index} className="pdf-file-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Heading"
+                      value={pdfFile.heading}
+                      onChange={(e) =>
+                        handlePdfChange(index, "heading", e.target.value)
+                      }
+                    />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="URL"
+                      value={pdfFile.url}
+                      onChange={(e) =>
+                        handlePdfChange(index, "url", e.target.value)
+                      }
+                    />
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={() => handleRemovePdfFile(index)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleAddPdfFile}
+                >
+                  Add PDF File
+                </button>
               </div>
             </div>
             <div className="modal-footer">
