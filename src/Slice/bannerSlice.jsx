@@ -27,6 +27,9 @@ export const uploadBanner = createAsyncThunk(
     if (bannerData.cornerLabelColor) {
       formData.append("cornerLabelColor", bannerData.cornerLabelColor);
     }
+    if (bannerData.index) {
+      formData.append("index", bannerData.index);
+    }
     const response = await axios.post(
       `${API_BASE_URL}/banner/upload-banner`,
       formData
@@ -40,6 +43,18 @@ export const deleteBanner = createAsyncThunk(
   async (id) => {
     await axios.delete(`${API_BASE_URL}/banner/${id}`);
     return id;
+  }
+);
+
+export const editBanner = createAsyncThunk(
+  "banners/editBanner",
+  async (bannerData) => {
+    const response = await axios.put(`/banner/${bannerData._id}`, {
+      cornerLabelText: bannerData.cornerLabelText,
+      cornerLabelColor: bannerData.cornerLabelColor,
+      index: bannerData.index,
+    });
+    return response.data;
   }
 );
 
@@ -72,6 +87,22 @@ const bannerSlice = createSlice({
         state.banners = state.banners.filter(
           (banner) => banner._id !== action.payload
         );
+      })
+      .addCase(editBanner.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(editBanner.fulfilled, (state, action) => {
+        const index = state.banners.findIndex(
+          (banner) => banner._id === action.payload._id
+        );
+        if (index !== -1) {
+          state.banners[index] = action.payload;
+        }
+        state.loading = false;
+      })
+      .addCase(editBanner.rejected, (state, action) => {
+        state.error = action.error.message;
+        state.loading = false;
       });
   },
 });
