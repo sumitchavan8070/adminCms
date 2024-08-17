@@ -11,6 +11,7 @@ import QuestionPaperManagement from "./Pages/QuestionPaperManagement";
 import EditExcelQuestionPaper from "./Components/EditExcelQuestionPaper";
 import SubcategoriesComponent from "./Components/SubcategoriesComponent";
 import CategoriesTable from "./Components/CategoriesTable";
+import BannerUpload from "./Pages/BannerUpload";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               path="/edit-excel-question-paper"
               element={<EditExcelQuestionPaper />}
             />
+            <Route path="/banner" element={<BannerUpload />} />
           </Routes>
         </div>
       </Router>

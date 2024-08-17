@@ -1,0 +1,292 @@
+/* .banner-upload {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .banner-upload h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .banner-upload form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .banner-upload label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .banner-upload input[type="file"],
+  .banner-upload input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .banner-preview {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .banner-preview img {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .remove-preview-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .remove-preview-btn:hover {
+    background-color: #ff3333;
+  }
+  
+  .banner-list {
+    margin-top: 30px;
+  }
+  
+  .banner-list h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .banner-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .banner-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-list img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .delete-banner-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .delete-banner-btn:hover {
+    background-color: #ff3333;
+  }
+   */
+
+
+   .banner-upload {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .banner-upload h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  
+  .banner-upload form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .banner-upload label {
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .banner-upload input[type="file"],
+  .banner-upload input[type="text"] {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .banner-upload input[type="file"]:hover,
+  .banner-upload input[type="text"]:focus {
+    border-color: #3498db;
+  }
+  
+  .banner-preview {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .banner-preview img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #bdc3c7;
+    margin-top: 10px;
+  }
+  
+  .remove-preview-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-preview-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .banner-upload button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .banner-upload button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+  
+  .banner-list {
+    margin-top: 40px;
+  }
+  
+  .banner-list h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .banner-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .banner-list li {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .banner-list li:hover {
+    transform: scale(1.02);
+    background-color: #ffffff;
+  }
+  
+  .banner-list img {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #bdc3c7;
+  }
+  
+  .banner-list .banner-info {
+    flex: 1;
+    padding-left: 15px;
+  }
+  
+  .banner-list .banner-info p {
+    font-size: 16px;
+    color: #34495e;
+  }
+  
+  .delete-banner-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-banner-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .banner-list li {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .banner-list img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 15px;
+    }
+  
+    .banner-list .banner-info {
+      padding-left: 0;
+    }
+  
+    .banner-upload button[type="submit"] {
+      width: 100%;
+    }
+  }
+  
