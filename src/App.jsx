@@ -12,6 +12,7 @@ import EditExcelQuestionPaper from "./Components/EditExcelQuestionPaper";
 import SubcategoriesComponent from "./Components/SubcategoriesComponent";
 import CategoriesTable from "./Components/CategoriesTable";
 import BannerUpload from "./Pages/BannerUpload";
+import PlansAdmin from "./Pages/PlansAdmin";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
               element={<QuestionPaperManagement />}
             />
             <Route path="/students" element={<Students />} />
-            <Route path="/subscription" element={<QuestionPaperManagement />} />
+            <Route path="/subscription" element={<PlansAdmin />} />
             <Route
               path="/edit-excel-question-paper"
               element={<EditExcelQuestionPaper />}

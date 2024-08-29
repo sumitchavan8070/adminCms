@@ -6,6 +6,7 @@ import subCategoriesReducer from "../Slice/subCategoriesSlice";
 import yearsReducer from "../Slice/yearsSlice";
 import pdfReducer from "../Slice/pdfSlice";
 import bannerReducer from "../Slice/bannerSlice";
+import plansReducer from "../Slice/plansSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     years: yearsReducer,
     pdf: pdfReducer,
     banners: bannerReducer,
+    plans: plansReducer,
   },
 });
 
