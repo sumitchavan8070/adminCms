@@ -207,4 +207,34 @@
       font-size: 12px;
     }
   }
+
+
+ /* For Paln Buttons */
+
+  .button-container {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button-container button:disabled {
+    background-color: #ccc; /* Gray background for disabled buttons */
+    cursor: not-allowed;
+  }
+  
+  .button-container button:hover:not(:disabled) {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
   
