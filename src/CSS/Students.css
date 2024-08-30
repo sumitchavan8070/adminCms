@@ -1,69 +1,4 @@
-/* src/CSS/Students.css
-.students-table {
-    width: 100%;
-    margin: 20px auto;
-    border-collapse: collapse;
-  }
-  
-  .students-table table {
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .students-table thead {
-    background-color: #4a90e2;
-    color: white;
-  }
-  
-  .students-table th, .students-table td {
-    padding: 12px 15px;
-    text-align: left;
-  }
-  
-  .students-table th {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .students-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .students-table tbody tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .students-table tbody td {
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .students-table tbody td:last-child {
-    text-align: center;
-  }
-  
-  .students-table tbody tr td {
-    font-size: 14px;
-  }
-  
-  @media (max-width: 768px) {
-    .students-table th, .students-table td {
-      padding: 8px 10px;
-    }
-  
-    .students-table th {
-      font-size: 14px;
-    }
-  
-    .students-table tbody td {
-      font-size: 12px;
-    }
-  }
-   */
-
-
-   /* src/CSS/Students.css */
+/* 
 
 .students-table {
     width: 100%;
@@ -76,6 +11,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   }
   
   .students-table thead {
@@ -85,12 +21,14 @@
   
   .students-table th, .students-table td {
     padding: 12px 15px;
-    text-align: left;
+
   }
   
   .students-table th {
     font-weight: bold;
     font-size: 16px;
+    text-align: left;
+
   }
   
   .students-table tbody tr:nth-child(even) {
@@ -138,5 +76,135 @@
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
+  }
+   */
+
+
+   .students-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .students-table table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .students-table thead {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .students-table th, .students-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .students-table th {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .students-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .students-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .students-table tbody td {
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .students-table tbody td:last-child {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .students-table th, .students-table td {
+      padding: 8px 10px;
+    }
+  
+    .students-table th {
+      font-size: 14px;
+    }
+  
+    .students-table tbody td {
+      font-size: 12px;
+    }
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  /* Pagination Styling */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #a1c6f0;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #357ABD;
+  }
+  
+  .pagination button.active {
+    background-color: #0a7ff5;
+    font-weight: bold;
+  }
+  
+  .pagination button.disabled {
+    background-color: #747373;
+    cursor: not-allowed;
+  }
+  
+  .pagination button svg {
+    vertical-align: middle;
+  }
+  
+  .pagination .arrow {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pagination .arrow button {
+    padding: 8px;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 480px) {
+    .pagination button {
+      padding: 6px 8px;
+      margin: 0 2px;
+      font-size: 12px;
+    }
   }
   
