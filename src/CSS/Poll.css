@@ -1,0 +1,227 @@
+.poll-manage-container {
+    padding: 20px;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .loading {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .error-text {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  .students-table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  .students-table table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .students-table thead {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .students-table th, .students-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .students-table th {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .students-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .students-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .students-table tbody td {
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .students-table tbody td:last-child {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .students-table th, .students-table td {
+      padding: 8px 10px;
+    }
+  
+    .students-table th {
+      font-size: 14px;
+    }
+  
+    .students-table tbody td {
+      font-size: 12px;
+    }
+  }
+  
+  .button-container-poll {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-container-poll button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .approve-button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+  }
+  
+  .approve-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .reject-button {
+    background-color: #ff4949; /* Red background */
+    color: white;
+  }
+  
+  .reject-button:hover {
+    background-color: #e03e3e; /* Darker red on hover */
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background-color: #a1c6f0;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: #357abd;
+  }
+  
+  .pagination button.active {
+    background-color: #0a7ff5;
+    font-weight: bold;
+  }
+  
+  .pagination button.disabled {
+    background-color: #747373;
+    cursor: not-allowed;
+  }
+  
+  .pagination .arrow {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pagination .arrow button {
+    padding: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    .pagination button {
+      padding: 6px 8px;
+      margin: 0 2px;
+      font-size: 12px;
+    }
+  }
+  
+
+  /* Status colors */
+.status {
+    font-weight: bold;
+  }
+  
+  .status.pending {
+    color: rgb(175, 175, 5);
+  }
+  
+  .status.approved {
+    color: green;
+  }
+  
+  .status.rejected {
+    color: red;
+  }
+  
+  /* Add styles for the search container */
+  .search-container {
+    margin-bottom: 10px;
+  }
+  
+  .search-container input {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .search-container select {
+    padding: 5px;
+  }
+  
+  /* Button styles */
+  .delete-button {
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b; /* Darker red */
+  }
+  
+  /* Other button styles remain the same */
+  
+  

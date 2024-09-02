@@ -129,6 +129,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../CSS/Students.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Students = () => {
   const [students, setStudents] = useState([]);
@@ -140,6 +142,10 @@ const Students = () => {
   const [selectAll, setSelectAll] = useState(false); // New state for Select All checkbox
 
   const [globalFreePlan, setGlobalFreePlan] = useState(""); // State for global free plan status
+
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [showGlobalFreePlanForm, setShowGlobalFreePlanForm] = useState(false); // State to toggle form visibility
 
   useEffect(() => {
     fetchData();
@@ -240,13 +246,6 @@ const Students = () => {
     }
   };
 
-  //   <button onClick={enableFreePlan} disabled={!selectedStudents.length}>
-  //   Enable Free Plan
-  // </button>
-  // <button onClick={disablePlan} disabled={!selectedStudents.length}>
-  //   Disable Plan
-  // </button>
-
   const handleSelectAll = (e) => {
     const isChecked = e.target.checked;
     setSelectAll(isChecked);
@@ -262,27 +261,58 @@ const Students = () => {
   };
 
   // Fetch the current status of the global free plan
+  // const fetchGlobalFreePlanStatus = async () => {
+  //   try {
+  //     const response = await axios.get("/global-free-plan-status");
+  //     setGlobalFreePlan(response.data.status);
+  //   } catch (error) {
+  //     console.error("Error fetching global free plan status", error);
+  //   }
+  // };
+
+  // const handleGlobalFreePlanChange = async (event) => {
+  //   const status = event.target.value;
+  //   setGlobalFreePlan(status);
+
+  //   try {
+  //     await axios.put("/update-global-free-plan", { status });
+  //     alert(`Global Free Plan ${status === "Active" ? "Enabled" : "Disabled"}`);
+  //   } catch (error) {
+  //     console.error("Error updating global free plan status", error);
+  //   }
+  // };
+
   const fetchGlobalFreePlanStatus = async () => {
     try {
       const response = await axios.get("/global-free-plan-status");
       setGlobalFreePlan(response.data.status);
+      setStartDate(new Date(response.data.subscriptionStartDate || Date.now()));
+      setEndDate(new Date(response.data.subscriptionExpiryDate || Date.now()));
     } catch (error) {
       console.error("Error fetching global free plan status", error);
     }
   };
 
-  const handleGlobalFreePlanChange = async (event) => {
-    const status = event.target.value;
-    setGlobalFreePlan(status);
+  const handleGlobalFreePlanChange = (event) => {
+    setGlobalFreePlan(event.target.value);
+  };
 
+  const handleGlobalFreePlanSave = async () => {
     try {
-      await axios.put("/update-global-free-plan", { status });
-      alert(`Global Free Plan ${status === "Active" ? "Enabled" : "Disabled"}`);
+      await axios.put("/update-global-free-plan", {
+        status: globalFreePlan,
+        subscriptionStartDate: startDate,
+        subscriptionExpiryDate: endDate,
+      });
+      alert(
+        `Global Free Plan ${
+          globalFreePlan === "Active" ? "Enabled" : "Disabled"
+        }`
+      );
     } catch (error) {
       console.error("Error updating global free plan status", error);
     }
   };
-
   return (
     <div className="students-table">
       <div className="search-container">
@@ -294,7 +324,7 @@ const Students = () => {
         />
       </div>
 
-      <div className="global-free-plan">
+      {/* <div className="global-free-plan">
         <label htmlFor="global-free-plan">Global Free Plan While Login:</label>
         <select
           id="global-free-plan"
@@ -307,9 +337,42 @@ const Students = () => {
           <option value="Active">Active</option>
           <option value="Disable">Disable</option>
         </select>
-      </div>
+
+        <div className="date-picker-container">
+          <label>Subscription Start Date:</label>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            dateFormat="yyyy/MM/dd"
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+          />
+        </div>
+
+        <div className="date-picker-container">
+          <label>Subscription Expiry Date:</label>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            dateFormat="yyyy/MM/dd"
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+          />
+        </div>
+
+        <button onClick={handleGlobalFreePlanSave} disabled={!globalFreePlan}>
+          Save
+        </button>
+      </div> */}
 
       <div className="button-container">
+        <button
+          onClick={() => setShowGlobalFreePlanForm(!showGlobalFreePlanForm)}
+        >
+          Set Free Plan Activity Status
+        </button>
         <button onClick={enableFreePlan} disabled={!selectedStudents.length}>
           Enable Free Plan For Selected
         </button>
@@ -317,6 +380,62 @@ const Students = () => {
           Disable Plan For Selected
         </button>
       </div>
+
+      {showGlobalFreePlanForm && (
+        <form className="global-free-plan">
+          <label htmlFor="global-free-plan">
+            Global Free Plan While Login:
+          </label>
+          <select
+            id="global-free-plan"
+            value={globalFreePlan}
+            onChange={handleGlobalFreePlanChange}
+          >
+            <option value="" disabled>
+              Not Selected
+            </option>
+            <option value="Active">Active</option>
+            <option value="Disable">Disable</option>
+          </select>
+
+          <div className="date-picker-container">
+            <label>Subscription Start Date:</label>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              dateFormat="yyyy/MM/dd"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+            />
+          </div>
+
+          <div className="date-picker-container">
+            <label>Subscription Expiry Date:</label>
+            <DatePicker
+              selected={endDate}
+              onChange={(date) => setEndDate(date)}
+              dateFormat="yyyy/MM/dd"
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+            />
+          </div>
+
+          <button onClick={handleGlobalFreePlanSave} disabled={!globalFreePlan}>
+            Save
+          </button>
+        </form>
+      )}
+
+      {/* <div className="button-container">
+        <button onClick={enableFreePlan} disabled={!selectedStudents.length}>
+          Enable Free Plan For Selected
+        </button>
+        <button onClick={disablePlan} disabled={!selectedStudents.length}>
+          Disable Plan For Selected
+        </button>
+      </div> */}
       <table>
         <thead>
           <tr>

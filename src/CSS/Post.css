@@ -1,0 +1,67 @@
+.post-manage-container {
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-container input,
+  .search-container select {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .posts-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .posts-table th,
+  .posts-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.pending {
+    color: orange;
+  }
+  
+  .status.approved {
+    color: green;
+  }
+  
+  .status.rejected {
+    color: red;
+  }
+  
+  .button-container-post button {
+    margin: 0 5px;
+  }
+  
+  .loading {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .error-text {
+    color: red;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+  }
+  

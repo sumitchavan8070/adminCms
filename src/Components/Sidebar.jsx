@@ -102,6 +102,62 @@ const Sidebar = () => {
               Subscription
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/poll"
+              className={`nav-link ${
+                location.pathname === "/poll" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Approve Polls
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/post"
+              className={`nav-link ${
+                location.pathname === "/post" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Approve Post
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/banner"
+              className={`nav-link ${
+                location.pathname === "/banner" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Banners Control
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/feedback"
+              className={`nav-link ${
+                location.pathname === "/feedback" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Feedback Management
+            </Link>
+          </li>
         </ul>
         <hr />
       </div>

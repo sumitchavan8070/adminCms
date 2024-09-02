@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Async thunks for API calls
 export const fetchPlans = createAsyncThunk("plans/fetchPlans", async () => {
-  const response = await axios.get("/plans");
+  const response = await axios.get("/plans/get-all");
   return response.data;
 });
 
@@ -14,7 +14,6 @@ export const createPlan = createAsyncThunk(
 
     const response = await axios.post("/plans", newPlan);
     console.log("response entry:" + JSON.stringify(response));
-
     return response.data;
   }
 );

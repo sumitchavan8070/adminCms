@@ -167,13 +167,30 @@ const categoriesSlice = createSlice({
       .addCase(fetchCategories.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.categories = action.payload;
-      })
+      // .addCase(fetchCategories.fulfilled, (state, action) => {
+      //   state.status = "succeeded";
+      //   state.categories = action.payload;
+      // })
       .addCase(fetchCategories.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      // .addCase(updateCategory.fulfilled, (state, action) => {
+      //   const updatedCategory = action.payload;
+      //   const existingCategory = state.categories.find(
+      //     (category) => category._id === updatedCategory._id
+      //   );
+      //   if (existingCategory) {
+      //     Object.assign(existingCategory, updatedCategory);
+      //   }
+      // })
+
+      .addCase(fetchCategories.fulfilled, (state, action) => {
+        state.categories = action.payload.map((category, index) => ({
+          ...category,
+          index, // Assign index based on position in array
+        }));
+        state.status = "succeeded";
       })
       .addCase(updateCategory.fulfilled, (state, action) => {
         const updatedCategory = action.payload;
@@ -182,6 +199,7 @@ const categoriesSlice = createSlice({
         );
         if (existingCategory) {
           Object.assign(existingCategory, updatedCategory);
+          existingCategory.index = updatedCategory.index;
         }
       })
       .addCase(deleteCategory.fulfilled, (state, action) => {

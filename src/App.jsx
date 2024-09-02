@@ -13,6 +13,9 @@ import SubcategoriesComponent from "./Components/SubcategoriesComponent";
 import CategoriesTable from "./Components/CategoriesTable";
 import BannerUpload from "./Pages/BannerUpload";
 import PlansAdmin from "./Pages/PlansAdmin";
+import PollManage from "./Pages/PollManage";
+import PostManage from "./Pages/PostManage";
+import FeedbackManage from "./Pages/FeedbackManage";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
               element={<EditExcelQuestionPaper />}
             />
             <Route path="/banner" element={<BannerUpload />} />
+            <Route path="/poll" element={<PollManage />} />
+            <Route path="/post" element={<PostManage />} />
+            <Route path="/feedback" element={<FeedbackManage />} />
           </Routes>
         </div>
       </Router>

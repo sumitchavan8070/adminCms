@@ -7,6 +7,9 @@ import yearsReducer from "../Slice/yearsSlice";
 import pdfReducer from "../Slice/pdfSlice";
 import bannerReducer from "../Slice/bannerSlice";
 import plansReducer from "../Slice/plansSlice";
+import pollsReducer from "../Slice/pollsSlice";
+import postsReducer from "../Slice/postsSlice"; // Adjust the path if needed
+import feedbacksReducer from "../Slice/feedbacksSlice";
 
 const store = configureStore({
   reducer: {
@@ -17,6 +20,9 @@ const store = configureStore({
     pdf: pdfReducer,
     banners: bannerReducer,
     plans: plansReducer,
+    polls: pollsReducer,
+    posts: postsReducer,
+    feedbacks: feedbacksReducer,
   },
 });
 
