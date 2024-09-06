@@ -10,6 +10,7 @@ import plansReducer from "../Slice/plansSlice";
 import pollsReducer from "../Slice/pollsSlice";
 import postsReducer from "../Slice/postsSlice"; // Adjust the path if needed
 import feedbacksReducer from "../Slice/feedbacksSlice";
+import donationReducer from "../Slice/donationSlice";
 
 const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
     polls: pollsReducer,
     posts: postsReducer,
     feedbacks: feedbacksReducer,
+    donations: donationReducer,
   },
 });
 

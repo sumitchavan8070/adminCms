@@ -55,11 +55,11 @@ const UploadExcel = ({ onClose, paperData }) => {
 
         // Check for mandatory columns
         const mandatoryColumns = [
-          "QuestionText",
-          "Option1",
-          "Option2",
-          "Option3",
-          "Option4",
+          "question",
+          "option1",
+          "option2",
+          "option3",
+          "option4",
         ];
         const columns = Object.keys(jsonData[0]);
         const hasAllMandatoryColumns = mandatoryColumns.every((column) =>
@@ -78,11 +78,11 @@ const UploadExcel = ({ onClose, paperData }) => {
             catID: paperData.catID, // Assuming you need context-specific IDs
             subCatID: paperData.subCatId,
             QPYearID: paperData.yearId,
-            question: question.QuestionText,
-            option1: question.Option1,
-            option2: question.Option2,
-            option3: question.Option3,
-            option4: question.Option4,
+            question: question.question,
+            option1: question.option1,
+            option2: question.option2,
+            option3: question.option3,
+            option4: question.option4,
             answer: question.Answer,
             ...(question.SubjectID && { subjectID: question.SubjectID }),
             ...(question.TopicID && { topicID: question.TopicID }),

@@ -16,6 +16,7 @@ import PlansAdmin from "./Pages/PlansAdmin";
 import PollManage from "./Pages/PollManage";
 import PostManage from "./Pages/PostManage";
 import FeedbackManage from "./Pages/FeedbackManage";
+import DonationManager from "./Pages/DonationManager";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/poll" element={<PollManage />} />
             <Route path="/post" element={<PostManage />} />
             <Route path="/feedback" element={<FeedbackManage />} />
+            <Route path="/donations" element={<DonationManager />} />
           </Routes>
         </div>
       </Router>

@@ -158,6 +158,20 @@ const Sidebar = () => {
               Feedback Management
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/donations"
+              className={`nav-link ${
+                location.pathname === "/donations" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Donation Management
+            </Link>
+          </li>
         </ul>
         <hr />
       </div>

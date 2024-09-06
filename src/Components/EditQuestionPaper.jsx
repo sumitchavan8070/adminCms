@@ -85,27 +85,59 @@ const EditQuestionPaper = ({ paperData, onClose }) => {
     }
   };
 
-  const handleUpdateQuestion = (index) => {
-    const questionToUpdate = questions[index];
+  // const handleUpdateQuestion = (question, index) => {
+  //   console.log("Question to update" + JSON.stringify(question));
+
+  //   // const questionToUpdate = questions[index];
+  //   dispatch(
+  //     updateQuestion({
+  //       questionId: question._id,
+  //       updatedData: {
+  //         question: question.question,
+  //         option1: question.option1,
+  //         option2: question.option2,
+  //         option3: question.option3,
+  //         option4: question.option4,
+  //         answer: question.answer,
+  //         // ...(question.subject && {
+  //         //   subjectId: question.subject,
+  //         // }),
+  //         // ...(question.topic && { topicId: question.topic }),
+  //       },
+  //     })
+  //   )
+  //     .then(() => {
+  //       onClose();
+  //     })
+  //     .catch((error) => {
+  //       console.error("Failed to update question:", error);
+  //     });
+  // };
+
+  const handleUpdateQuestion = (question, index) => {
+    // console.log("Question to update" + JSON.stringify(question));
+
     dispatch(
       updateQuestion({
-        questionId: questionToUpdate._id,
+        questionId: question._id,
         updatedData: {
-          question: questionToUpdate.question,
-          option1: questionToUpdate.option1,
-          option2: questionToUpdate.option2,
-          option3: questionToUpdate.option3,
-          option4: questionToUpdate.option4,
-          answer: questionToUpdate.answer,
-          ...(questionToUpdate.subject && {
-            subjectId: questionToUpdate.subject,
-          }),
-          ...(questionToUpdate.topic && { topicId: questionToUpdate.topic }),
+          question: question.question,
+          option1: question.option1,
+          option2: question.option2,
+          option3: question.option3,
+          option4: question.option4,
+          answer: question.answer,
         },
       })
     )
       .then(() => {
-        onClose();
+        // Update the UI by modifying the questions state
+        setQuestions((prevQuestions) => {
+          const newQuestions = [...prevQuestions];
+          newQuestions[index] = { ...newQuestions[index], ...question };
+          return newQuestions;
+        });
+        onClose(); // Optionally close the modal after updating
       })
       .catch((error) => {
         console.error("Failed to update question:", error);
@@ -283,7 +315,7 @@ const EditQuestionPaper = ({ paperData, onClose }) => {
               <>
                 <button
                   className="btn btn-success"
-                  onClick={() => handleUpdateQuestion(index)}
+                  onClick={() => handleUpdateQuestion(question, index)}
                 >
                   Update
                 </button>

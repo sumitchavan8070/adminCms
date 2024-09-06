@@ -71,6 +71,7 @@ export const deleteQuestionPaper = createAsyncThunk(
 export const updateQuestion = createAsyncThunk(
   "updateQuestion",
   async ({ questionId, updatedData }) => {
+    // console.log("questionId" + JSON.stringify(questionId));
     // console.log("updated data =>" + JSON.stringify(updatedData));
 
     const response = await axios.put(
@@ -78,7 +79,7 @@ export const updateQuestion = createAsyncThunk(
       updatedData
     );
 
-    // console.log("updated data server =>" + JSON.stringify(updatedData));
+    // console.log("updated data server =>" + JSON.stringify(response.data));
 
     return response.data;
   }
@@ -203,9 +204,10 @@ const questionPaperSlice = createSlice({
       .addCase(updateQuestion.pending, (state) => {
         state.status = "loading";
       })
+
       // .addCase(updateQuestion.fulfilled, (state, action) => {
       //   state.status = "succeeded";
-      //   const updatedQuestion = action.payload.updatedQuestion;
+      //   const updatedQuestion = action.payload;
       //   const paper = state.questionPapers.find((paper) =>
       //     paper.questions.some((q) => q._id === updatedQuestion._id)
       //   );
@@ -218,30 +220,35 @@ const questionPaperSlice = createSlice({
       //     }
       //   }
       // })
+
       .addCase(updateQuestion.fulfilled, (state, action) => {
         state.status = "succeeded";
         const updatedQuestion = action.payload;
-        const paper = state.questionPapers.find((paper) =>
+
+        // Find the paper containing the question
+        const paperIndex = state.questionPapers.findIndex((paper) =>
           paper.questions.some((q) => q._id === updatedQuestion._id)
         );
-        if (paper) {
-          const questionIndex = paper.questions.findIndex(
-            (q) => q._id === updatedQuestion._id
-          );
+        if (paperIndex !== -1) {
+          const questionIndex = state.questionPapers[
+            paperIndex
+          ].questions.findIndex((q) => q._id === updatedQuestion._id);
           if (questionIndex !== -1) {
-            paper.questions[questionIndex] = updatedQuestion;
+            // Create a new updated questions array
+            const updatedQuestions = [
+              ...state.questionPapers[paperIndex].questions,
+            ];
+            updatedQuestions[questionIndex] = updatedQuestion;
+
+            // Update the paper with the new questions array
+            state.questionPapers[paperIndex] = {
+              ...state.questionPapers[paperIndex],
+              questions: updatedQuestions,
+            };
           }
         }
       })
-      // .addCase(updateQuestion.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   const index = state.questionPapers.findIndex(
-      //     (question) => question._id === action.payload._id
-      //   );
-      //   if (index !== -1) {
-      //     state.questionPapers[index] = action.payload;
-      //   }
-      // })
+
       .addCase(updateQuestion.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;

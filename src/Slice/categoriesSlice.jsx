@@ -8,7 +8,7 @@ export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
   async () => {
     const response = await axios.get("/getall-cat"); // Update with your API endpoint
-    console.log("cat" + JSON.stringify(response));
+    // console.log("cat" + JSON.stringify(response));
 
     return response.data;
   }
