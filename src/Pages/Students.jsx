@@ -467,10 +467,10 @@ const Students = () => {
                   onChange={() => handleSelectStudent(student._id)}
                 />
               </td>
-              <td>{student.name || "N/A"}</td>
-              <td>{student.username || "N/A"}</td>
-              <td>{student.email || "N/A"}</td>
-              <td>{student.mobileNumber || "N/A"}</td>
+              <td>{student.name || "-"}</td>
+              <td>{student.username || "-"}</td>
+              <td>{student.email || "-"}</td>
+              <td>{student.mobileNumber || "-"}</td>
               <td>{student.isSubscriptionActive ? "Active" : "Inactive"}</td>
               <td>
                 {plans[student.subscriptionPlanID]
