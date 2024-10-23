@@ -5,3 +5,29 @@ export const RENDER_SERVER_URL =
 export const LOCAL_SERVER_URL = "http://localhost:8080/api/";
 
 export const SERVER_URL = RENDER_SERVER_URL;
+
+{
+  /* <table border="1">
+  <tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+<tr>
+    <td> </td>
+    <td> </td>
+  </tr>
+  
+</table> */
+}

@@ -471,7 +471,7 @@ const Students = () => {
               <td>{student.username || "N/A"}</td>
               <td>{student.email || "N/A"}</td>
               <td>{student.mobileNumber || "N/A"}</td>
-              <td>{student.isSubscriptionActive ? "Active" : "N/A"}</td>
+              <td>{student.isSubscriptionActive ? "Active" : "Inactive"}</td>
               <td>
                 {plans[student.subscriptionPlanID]
                   ? plans[student.subscriptionPlanID].name
