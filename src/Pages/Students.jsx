@@ -327,7 +327,12 @@ const Students = () => {
                   setShowDatePicker(true); // Show date picker
                 }}
               >
-                {new Date(student.subscriptionExpiryDate).toLocaleDateString()}
+                {/* {new Date(student.subscriptionExpiryDate).toLocaleDateString()} */}
+                {student.subscriptionExpiryDate
+                  ? new Date(
+                      student.subscriptionExpiryDate
+                    ).toLocaleDateString()
+                  : "N/A"}
                 {showDatePicker && selectedStudentId === student._id && (
                   <DatePicker
                     selected={endDate}
