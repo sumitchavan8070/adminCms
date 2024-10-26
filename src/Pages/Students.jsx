@@ -170,6 +170,24 @@ const Students = () => {
       console.error("Error updating global free plan status", error);
     }
   };
+
+  const [selectedStudentId, setSelectedStudentId] = useState(null); // State to track which student is being edited
+  const [showDatePicker, setShowDatePicker] = useState(false); // State to control date picker visibility for expiry date
+
+  const handleExpiryDateChange = async (studentId, date) => {
+    try {
+      await axios.put("/update-expiry-date", {
+        studentId: studentId,
+        expiryDate: date,
+      });
+      await fetchData();
+      alert("Expiry date updated successfully!");
+      setShowDatePicker(false); // Close the date picker
+    } catch (error) {
+      console.error("Error updating expiry date", error);
+    }
+  };
+
   return (
     <div className="students-table">
       <div className="search-container">
@@ -294,12 +312,35 @@ const Students = () => {
                   ? new Date(student.subscriptionStartDate).toLocaleDateString()
                   : "N/A"}
               </td>
-              <td>
+              {/* <td>
                 {student.subscriptionExpiryDate
                   ? new Date(
                       student.subscriptionExpiryDate
                     ).toLocaleDateString()
                   : "N/A"}
+              </td> */}
+
+              <td
+                onClick={() => {
+                  setSelectedStudentId(student._id);
+                  setEndDate(new Date(student.subscriptionExpiryDate)); // Set the expiry date for the selected student
+                  setShowDatePicker(true); // Show date picker
+                }}
+              >
+                {new Date(student.subscriptionExpiryDate).toLocaleDateString()}
+                {showDatePicker && selectedStudentId === student._id && (
+                  <DatePicker
+                    selected={endDate}
+                    onChange={(date) => {
+                      handleExpiryDateChange(student._id, date);
+                    }}
+                    dateFormat="yyyy/MM/dd"
+                    showMonthDropdown
+                    showYearDropdown
+                    dropdownMode="select"
+                    inline // This makes the DatePicker render inline
+                  />
+                )}
               </td>
             </tr>
           ))}
