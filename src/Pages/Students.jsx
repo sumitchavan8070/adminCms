@@ -143,8 +143,15 @@ const Students = () => {
 
   const [globalFreePlan, setGlobalFreePlan] = useState(""); // State for global free plan status
 
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const today = new Date();
+  const [startDate, setStartDate] = useState(today);
+
+  // const [startDate, setStartDate] = useState(null);
+
+  const initialExpiryDate = new Date();
+  initialExpiryDate.setDate(initialExpiryDate.getDate() + 30);
+  const [endDate, setEndDate] = useState(initialExpiryDate);
+  // const [endDate, setEndDate] = useState(null);
   const [showGlobalFreePlanForm, setShowGlobalFreePlanForm] = useState(false); // State to toggle form visibility
 
   useEffect(() => {
@@ -286,8 +293,8 @@ const Students = () => {
     try {
       const response = await axios.get("/global-free-plan-status");
       setGlobalFreePlan(response.data.status);
-      setStartDate(new Date(response.data.subscriptionStartDate || Date.now()));
-      setEndDate(new Date(response.data.subscriptionExpiryDate || Date.now()));
+      // setStartDate(new Date(response.data.subscriptionStartDate || Date.now()));
+      // setEndDate(new Date(response.data.subscriptionExpiryDate || Date.now()));
     } catch (error) {
       console.error("Error fetching global free plan status", error);
     }
