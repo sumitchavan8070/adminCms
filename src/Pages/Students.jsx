@@ -31,11 +31,40 @@ const Students = () => {
     fetchGlobalFreePlanStatus();
   }, []);
 
+  // const fetchData = async () => {
+  //   try {
+  //     // Fetch all students
+  //     const studentsResponse = await axios.get("/get-all-students");
+  //     setStudents(studentsResponse.data);
+  //     console.log("studentsResponse", studentsResponse.data);
+
+  //     // Fetch all plans
+  //     const plansResponse = await axios.get("/plans/get-all");
+  //     const plansData = plansResponse.data;
+
+  //     // Create a mapping of plan IDs to plan details
+  //     const plansMap = {};
+  //     plansData.forEach((plan) => {
+  //       plansMap[plan._id] = plan;
+  //     });
+  //     setPlans(plansMap);
+  //   } catch (error) {
+  //     console.error("Error fetching data", error);
+  //   }
+  // };
+
   const fetchData = async () => {
     try {
       // Fetch all students
       const studentsResponse = await axios.get("/get-all-students");
-      setStudents(studentsResponse.data);
+
+      // Sort students by createdAt (descending order)
+      const sortedStudents = studentsResponse.data.sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+      });
+
+      setStudents(sortedStudents);
+      // console.log("sortedStudents", sortedStudents);
 
       // Fetch all plans
       const plansResponse = await axios.get("/plans/get-all");
@@ -175,9 +204,11 @@ const Students = () => {
   const [showDatePicker, setShowDatePicker] = useState(false); // State to control date picker visibility for expiry date
 
   const handleExpiryDateChange = async (studentId, date) => {
+    console.log("studentId", studentId);
+
     try {
       await axios.put("/update-expiry-date", {
-        studentId: studentId,
+        userId: studentId,
         expiryDate: date,
       });
       await fetchData();
