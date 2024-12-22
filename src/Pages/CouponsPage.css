@@ -1,0 +1,222 @@
+/* General Styles for the Coupons Page */
+.coupons-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+  }
+  
+  .no-coupons {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+  }
+  
+  .create-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #6949ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-button:hover {
+    background-color: #5c40e0;
+  }
+  
+  /* Table Styles */
+  .coupons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .coupons-table th,
+  .coupons-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .coupons-table th {
+    background-color: #6949ff;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  .coupons-table td {
+    background-color: white;
+  }
+  
+  .coupons-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .coupons-table tr:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Button Styles */
+  .edit-button,
+  .delete-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-form label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .modal-form input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .modal-form input:focus {
+    border-color: #6949ff;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-buttons button:first-child {
+    background-color: #6949ff;
+    color: white;
+  }
+  
+  .modal-buttons button:first-child:hover {
+    background-color: #5c40e0;
+  }
+  
+  .modal-buttons button:last-child {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .modal-buttons button:last-child:hover {
+    background-color: #999;
+  }
+  
+  /* Close Button for Modal */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: #333;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .coupons-container {
+      padding: 15px;
+    }
+  
+    .coupons-table {
+      font-size: 0.9rem;
+    }
+  
+    .modal {
+      width: 90%;
+    }
+  
+    .modal-form label {
+      font-size: 0.9rem;
+    }
+  
+    .modal-form input {
+      font-size: 0.9rem;
+    }
+  
+    .modal-buttons button {
+      font-size: 0.9rem;
+    }
+  }
+  

@@ -12,6 +12,7 @@ import postsReducer from "../Slice/postsSlice"; // Adjust the path if needed
 import feedbacksReducer from "../Slice/feedbacksSlice";
 import donationReducer from "../Slice/donationSlice";
 import appUpdateReducer from "../Slice/appUpdateSlice";
+import couponReducer from "../Slice/couponSlice";
 
 const store = configureStore({
   reducer: {
@@ -27,6 +28,7 @@ const store = configureStore({
     feedbacks: feedbacksReducer,
     donations: donationReducer,
     appUpdate: appUpdateReducer,
+    coupons: couponReducer,
   },
 });
 

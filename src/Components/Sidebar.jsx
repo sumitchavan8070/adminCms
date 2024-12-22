@@ -172,6 +172,20 @@ const Sidebar = () => {
               Donation Management
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/coupon"
+              className={`nav-link ${
+                location.pathname === "/coupon" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Coupon
+            </Link>
+          </li>
         </ul>
         <hr />
       </div>
