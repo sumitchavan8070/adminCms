@@ -67,6 +67,8 @@ const QuestionPaperManagement = () => {
   // };
 
   const handleDelete = (paperId) => {
+    console.log("-----------handle delete", paperId);
+
     dispatch(deleteQuestionPaper(paperId)).then(() => {
       if (selectedCategoryId) {
         dispatch(fetchQuestionPaperData(selectedCategoryId));
@@ -152,6 +154,7 @@ const QuestionPaperManagement = () => {
                 </thead>
                 <tbody>
                   {questionPapers?.map((item) => (
+                    // console.log("---------", item),
                     <tr key={item.yearId}>
                       <td>{item.subCatName}</td>
                       <td>{item.QPYear}</td>
@@ -185,7 +188,7 @@ const QuestionPaperManagement = () => {
                         )}
                         <button
                           className="btn btn-danger"
-                          onClick={() => handleDelete(item._id)}
+                          onClick={() => handleDelete(item.yearId)}
                         >
                           Delete
                         </button>

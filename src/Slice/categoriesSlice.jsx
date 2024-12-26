@@ -102,16 +102,30 @@ export const editYear = createAsyncThunk(
   }
 );
 
+// export const createExamEntry = createAsyncThunk(
+//   "examEntries/createExamEntry",
+//   async ({ categoryId, subCatName, year }) => {
+//     const response = await axios.post("/create-exam-entry", {
+//       categoryId,
+//       subCatName,
+//       year,
+//     });
+//     window.location.reload(); // Reload the page after a successful edit
+
+//     return response.data;
+//   }
+// );
+
 export const createExamEntry = createAsyncThunk(
   "examEntries/createExamEntry",
-  async ({ categoryId, subCatName, year }) => {
+  async ({ categoryId, subCatName, year, questionPaperName }) => {
     const response = await axios.post("/create-exam-entry", {
       categoryId,
       subCatName,
       year,
+      questionPaperName, // Added questionPaperName
     });
     window.location.reload(); // Reload the page after a successful edit
-    // console.log("------------->" + JSON.stringify(response));
 
     return response.data;
   }
