@@ -146,6 +146,8 @@ const QuestionPaperManagement = () => {
               <table>
                 <thead>
                   <tr>
+                    <th>PaperName</th>
+
                     <th>SubCategory</th>
                     <th>Year</th>
                     <th>Question Paper</th>
@@ -156,6 +158,8 @@ const QuestionPaperManagement = () => {
                   {questionPapers?.map((item) => (
                     // console.log("---------", item),
                     <tr key={item.yearId}>
+                      <td>{item?.questionPaperName || "NA"}</td>
+
                       <td>{item.subCatName}</td>
                       <td>{item.QPYear}</td>
                       <td>
