@@ -10,6 +10,7 @@ import {
 import "../CSS/EditQuestionPaper.css";
 import { useNavigate } from "react-router-dom";
 import UploadExcel from "./UploadExcel";
+import * as XLSX from "xlsx"; // Import XLSX for Excel handling
 
 const EditQuestionPaper = ({ paperData, onClose }) => {
   const [questions, setQuestions] = useState(paperData.questions);
@@ -183,6 +184,22 @@ const EditQuestionPaper = ({ paperData, onClose }) => {
     setIsUploadExcelOpen(true);
   };
 
+  const handleDownloadExcel = () => {
+    if (questions && questions.length > 0) {
+      const ws = XLSX.utils.json_to_sheet(questions);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Questions");
+      const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+      const blob = new Blob([wbout], { type: "application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "questions.xlsx";
+      link.click();
+      URL.revokeObjectURL(url); // Clean up the URL object
+    }
+  };
+
   if (subjectsLoading || topicsLoading) return <p>Loading...</p>;
   if (subjectsError) return <p>Error loading subjects: {subjectsError}</p>;
   if (topicsError) return <p>Error loading topics: {topicsError}</p>;
@@ -203,6 +220,9 @@ const EditQuestionPaper = ({ paperData, onClose }) => {
         </button>
         <button className="btn btn-secondary mx-2" onClick={handleUploadExcel}>
           Upload Excel
+        </button>
+        <button className="btn btn-success mx-2" onClick={handleDownloadExcel}>
+          Download Excel
         </button>
         <button className="btn btn-danger mx-2" onClick={onClose}>
           Close
