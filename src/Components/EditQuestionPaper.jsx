@@ -184,17 +184,39 @@ const EditQuestionPaper = ({ paperData, onClose }) => {
     setIsUploadExcelOpen(true);
   };
 
+  // const handleDownloadExcel = () => {
+  //   if (questions && questions.length > 0) {
+  //     const ws = XLSX.utils.json_to_sheet(questions);
+  //     const wb = XLSX.utils.book_new();
+  //     XLSX.utils.book_append_sheet(wb, ws, "Questions");
+  //     const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+  //     const blob = new Blob([wbout], { type: "application/octet-stream" });
+  //     const url = URL.createObjectURL(blob);
+  //     const link = document.createElement("a");
+  //     link.href = url;
+  //     link.download = "questions.xlsx";
+  //     link.click();
+  //     URL.revokeObjectURL(url); // Clean up the URL object
+  //   }
+  // };
+
   const handleDownloadExcel = () => {
     if (questions && questions.length > 0) {
       const ws = XLSX.utils.json_to_sheet(questions);
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, "Questions");
+
+      // Generate the file name based on whether paperData.questionPaperName exists
+      const fileName = paperData.questionPaperName
+        ? `${paperData.questionPaperName}.xlsx`
+        : "questions.xlsx";
+
       const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
       const blob = new Blob([wbout], { type: "application/octet-stream" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "questions.xlsx";
+      link.download = fileName; // Use the generated file name
       link.click();
       URL.revokeObjectURL(url); // Clean up the URL object
     }
