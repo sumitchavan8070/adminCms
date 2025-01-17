@@ -83,7 +83,7 @@ const UploadExcel = ({ onClose, paperData }) => {
             option2: question.option2,
             option3: question.option3,
             option4: question.option4,
-            answer: question.Answer,
+            answer: question.answer,
             ...(question.SubjectID && { subjectID: question.SubjectID }),
             ...(question.TopicID && { topicID: question.TopicID }),
           })),
