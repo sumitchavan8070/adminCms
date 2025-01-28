@@ -13,6 +13,8 @@ import feedbacksReducer from "../Slice/feedbacksSlice";
 import donationReducer from "../Slice/donationSlice";
 import appUpdateReducer from "../Slice/appUpdateSlice";
 import couponReducer from "../Slice/couponSlice";
+import websiteBlogReducer from "../Slice/websiteBlogSlice";
+import websiteBlogCategoryReducer from "../Slice/websiteBlogCategorySlice";
 
 const store = configureStore({
   reducer: {
@@ -29,6 +31,10 @@ const store = configureStore({
     donations: donationReducer,
     appUpdate: appUpdateReducer,
     coupons: couponReducer,
+    // websiteBlog: websiteBlogReducer,
+    website: websiteBlogReducer, // Make sure this key matches
+
+    websiteBlogCategory: websiteBlogCategoryReducer,
   },
 });
 

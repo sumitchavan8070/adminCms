@@ -1,0 +1,31 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loader.small {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+  
+  .loader.large {
+    width: 60px;
+    height: 60px;
+    border-width: 4px;
+  }

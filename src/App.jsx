@@ -20,6 +20,7 @@ import DonationManager from "./Pages/DonationManager";
 import AppUpdateManager from "./Components/AppUpdate/AppUpdateManager";
 import CouponManagement from "./Pages/CouponsPage";
 import CouponsPage from "./Pages/CouponsPage";
+import BlogForm from "./Pages/CMS/BlogForm";
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
             <Route path="/donations" element={<DonationManager />} />
             <Route path="/app-updates" component={<AppUpdateManager />} />
             <Route path="/coupon" element={<CouponsPage />} />
+
+            <Route path="/blog-manager" element={<BlogForm />} />
+
+            {/* <Route path="/blogs" element={<WebsiteBlogAdmin />} /> */}
           </Routes>
         </div>
       </Router>

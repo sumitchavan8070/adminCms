@@ -186,6 +186,20 @@ const Sidebar = () => {
               Coupon
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/blog-manager"
+              className={`nav-link ${
+                location.pathname === "/blog-manager" ? "active" : "text-white"
+              }`}
+            >
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle"></use>
+              </svg>
+              Blog
+            </Link>
+          </li>
         </ul>
         <hr />
       </div>
