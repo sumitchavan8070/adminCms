@@ -11,6 +11,9 @@ export const RENDER_SERVER_URL_SERVER2 =
   "https://server2-bfcq.onrender.com/api/v1/admin";
 
 export const RENDER_SERVER_URL_SERVER3 =
+  "https://server3-jldv.onrender.com/api/v1/admin";
+
+export const RENDER_SERVER_URL_SERVER4 =
   "https://server4-7qmk.onrender.com/api/v1/admin";
 
 export const LOCAL_SERVER_URL = "http://192.168.43.78:8080/api/v1/admin";
