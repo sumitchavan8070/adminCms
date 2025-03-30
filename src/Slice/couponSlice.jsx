@@ -8,7 +8,8 @@ export const fetchCoupons = createAsyncThunk(
   "coupons/fetchCoupons",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`coupons`);
+      const response = await axios.get(`coupons/all`);
+
       return response.data; // Adjust based on your API response structure
     } catch (error) {
       return rejectWithValue(error.response?.data || "Failed to fetch coupons");
