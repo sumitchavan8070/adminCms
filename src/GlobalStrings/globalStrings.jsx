@@ -27,28 +27,14 @@ export const VERCEL_SERVER = "https://meadhikari-sever.vercel.app/api/v1/auth";
 export const SERVER_URL = RENDER_SERVER_URL_SERVER5;
 // export const SERVER_URL = LOCAL_SERVER_URL;
 
-{
-  /* <table border="1">
-  <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-  <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-<tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-  
-</table> */
-}
+// export const ADMIN_USERNAME = "admin";
+// export const ADMIN_PASSWORD = "password";
+// src/GlobalStrings/globalStrings.js
+export const ADMIN_USERNAME = "admin";
+export const ADMIN_PASSWORD = "meadhikari@8070";
+
+export const EMPLOYEE_USERNAME = "employee";
+export const EMPLOYEE_PASSWORD = "meadhikari@8070";
+
+export const DEVELOPER_USERNAME = "developer";
+export const DEVELOPER_PASSWORD = "meadhikari@8070";

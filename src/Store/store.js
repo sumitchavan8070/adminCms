@@ -15,6 +15,7 @@ import appUpdateReducer from "../Slice/appUpdateSlice";
 import couponReducer from "../Slice/couponSlice";
 import websiteBlogReducer from "../Slice/websiteBlogSlice";
 import websiteBlogCategoryReducer from "../Slice/websiteBlogCategorySlice";
+import authReducer from "../Slice/authReducer";
 
 const store = configureStore({
   reducer: {
@@ -35,6 +36,7 @@ const store = configureStore({
     website: websiteBlogReducer, // Make sure this key matches
 
     websiteBlogCategory: websiteBlogCategoryReducer,
+    auth: authReducer,
   },
 });
 

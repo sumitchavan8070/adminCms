@@ -1,8 +1,20 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const Sidebar = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // Get authentication state from Redux
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  // Handle logout
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" }); // Dispatch LOGOUT action to reset Redux state
+    navigate("/login"); // Redirect to login page
+  };
 
   return (
     <>
@@ -202,6 +214,39 @@ const Sidebar = () => {
           </li>
         </ul>
         <hr />
+
+        {isAuthenticated && (
+          <button
+            className="btn btn-danger w-100 d-flex align-items-center justify-content-center gap-2"
+            onClick={handleLogout}
+            style={{
+              padding: "10px",
+              borderRadius: "50px",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-box-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1 0-1h8a.5.5 0 0 1 .5.5ZM7 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13A.5.5 0 0 1 7 1Z"
+              />
+              <path
+                fillRule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-2-2a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-1.147 1.146a.5.5 0 0 0 .708.708l2-2Z"
+              />
+            </svg>
+            Logout
+          </button>
+        )}
       </div>
     </>
   );
