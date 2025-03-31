@@ -9,6 +9,9 @@ const Sidebar = () => {
 
   // Get authentication state from Redux
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  if (!isAuthenticated) {
+    return null;
+  }
 
   // Handle logout
   const handleLogout = () => {
