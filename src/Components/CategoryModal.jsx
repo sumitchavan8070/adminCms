@@ -293,10 +293,10 @@ const CategoryModal = ({ show, onClose, category }) => {
       return;
     }
 
-    if (!landingPageSlug.trim()) {
-      alert("Landing Page Slug is required.");
-      return;
-    }
+    // if (!landingPageSlug.trim()) {
+    //   alert("Landing Page Slug is required.");
+    //   return;
+    // }
 
     const categoryData = {
       catName,
