@@ -306,6 +306,7 @@ const Students = () => {
             <th>Coupon code</th>
             {/* Add the new column for createdAt */}
             <th>Registered On</th>
+            <th>Registered Through</th>
           </tr>
         </thead>
         <tbody>
@@ -372,6 +373,7 @@ const Students = () => {
                   ? new Date(student.createdAt).toLocaleDateString()
                   : "N/A"}
               </td>
+              <td>{student.registeredThrough || "N/A"}</td>
             </tr>
           ))}
         </tbody>
