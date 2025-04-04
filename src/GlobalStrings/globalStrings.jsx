@@ -19,12 +19,15 @@ export const RENDER_SERVER_URL_SERVER4 =
 export const RENDER_SERVER_URL_SERVER5 =
   "https://server5-yl39.onrender.com/api/v1/admin";
 
+export const RENDER_SERVER_URL_SERVER7 =
+  "https://server-7skh.onrender.com/api/v1/admin";
+
 export const LOCAL_SERVER_URL = "http://192.168.43.78:8080/api/v1/admin";
 // export const LOCAL_SERVER_URL = "http://localhost:8080/api/v1/admin";
 
 export const VERCEL_SERVER = "https://meadhikari-sever.vercel.app/api/v1/auth";
 
-export const SERVER_URL = RENDER_SERVER_URL_SERVER5;
+export const SERVER_URL = RENDER_SERVER_URL_SERVER7;
 // export const SERVER_URL = LOCAL_SERVER_URL;
 
 // export const ADMIN_USERNAME = "admin";
